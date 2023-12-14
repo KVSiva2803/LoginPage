@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .divv:hover{
+            background-color:black !important;
+        }
+    </style>
+</head>
+<body style="background-color:rgb(124, 212, 124)">
+    <div style="position:relative;left:25%;top:10em;border:3px solid green;width:50em;background-color:rgb(29, 29, 56);border-radius:20px;" class="divv">
+    <img src="" alt="" style="position:relative;left:25%;border-radius:10px">
+    <li style="color:white"></li>
+    <li style="color:white"></li>
+    <li style="color:white"></li>
+</div>
+    <script>
+        var siva=localStorage.getItem("passingind")
+        let hello=JSON.parse(siva)
+        console.log(hello)
+        let lists=document.getElementsByTagName("li")
+
+
+        lists[0].innerHTML=hello["id"]
+        lists[1].innerHTML=hello["category"]
+        lists[2].innerHTML=hello["description"]
+        let imgg=document.querySelector("img")
+        imgg.setAttribute("src",hello["image"])
+        imgg.style.height="400px"
+        imgg.style.width="400px"
+
+    </script>
+    
+</body>
+</html>

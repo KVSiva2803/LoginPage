@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/js/bootstrap.js">
+    <style>
+        input:hover {
+            background-color: rgb(227, 223, 223);
+        }
+        .sivaa:hover{
+            background-image:url("https://www.w3webschool.com/wp-content/uploads/2022/10/developer.gif");
+            position: relative;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body style="background-color:black;">
+    <img src="./developer.gif" alt=""style="float:right;position:relative;left:-12em;top:8.5em;width:500px;height:515px;border-radius:20px">
+    <h1 style="color:rgb(136, 143, 136);position:relative;left:16em;top:1em">Register Here</h1>
+    <div
+        style="position:relative;left:25%;top:5em;background-color:rgb(145, 217, 145);display:inline-block;border-radius:10px;padding:50px;">
+        <form action="" >
+            <h5 style="display:inline">
+                UserName:
+            </h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" style="left:15px" required><br><br>
+            <span style="color:red;display:none">should contain atleast 8 letters and first letter must be S or
+                s</span>
+            <h5 style="display:inline">Confirm Username:</h5>&nbsp;&nbsp;
+            <input type="text"required>
+            <br><br>
+            <h5 style="display:inline">Password:</h5>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="password"required><br><br>
+            <span id="siva" style="color:red;display:none">
+                <li>First letter should be caps</li>
+                <li>password length must be greater than 8 to Meet Our Privacy Policies</li>
+                <li>Any one Special Character is mandatory </li>
+            </span>
+            <h5 style="display:inline" class="dots">
+                Confirm Password:
+            </h5>&nbsp;
+            <input type="password"required>
+            <br>
+            <br>
+            <h5 style="display:inline">Gender:</h5>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text"required>
+            <span id="ram" style="color:red;display:none">Please confirm your Gender</span>
+            <br><br>
+
+            <h5 style="display:inline">Gmail:</h5>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text"required>
+            <span id="gu" style="color:red;display:none">Please Enter A Valid Gmail Address</span>
+
+            <br><br>
+            <h5 style="display:inline">Date of Birth:</h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <input type="date"required>
+            <span id="db" style="color:red;display:none">Please Enter Your Data Of Birth</span>
+            <br><br>
+            <input type="submit" value="submit" style="position:relative;color:white;background-color:rgb(47, 78, 68);left:40%;border-radius:10px;padding:10px" id="subm"required>
+            <input type="reset" style="position:relative;color:white;background-color:rgb(47, 78, 68);left:40%;border-radius:10px;padding:10px"required>
+        </form>
+    </div>
+
+
+    <script>
+        var a = []
+        var arr =[]
+        console.log(document.forms[0])
+        document.forms[0].addEventListener("submit", function (event) {
+            event.preventDefault()
+            console.log("hello")
+            console.log(event)
+            var au = event.target[0].value
+            var ap = event.target[1].value
+            var username=event.target[0].value
+            var cnusername=event.target[1].value
+            
+
+            if (au.length >= 8 && (ap[0] == "s" || ap[0] == "S")) {
+                let spann = document.getElementById("siva")
+                spann.style.display = "none"
+                event.target[0].style.border = "0px solid black"
+                b = 1
+                a.push(b)
+            }
+            else {
+                let spann = document.querySelector("span")
+                spann.style.display = "block"
+                spann.style.width = "400px"
+                event.target[0].style.border = "2px solid red"
+                b = "bimbisara"
+                a.push(b)
+
+            }
+            var pu = event.target[2].value
+            var cp = event.target[3].value
+
+
+            var psd=event.target[2].value
+            var cnpsd=event.target[3].value
+            
+
+            if (pu.length >=8 && pu[0] == "S" && (pu[5] == "@" || pu[2] == "#" || pu[2] == "^" || pu[2] == "!")) {
+                let spann = document.getElementById("siva")
+                spann.style.display = "none"
+                event.target[2].style.border = "2px solid black"
+                b = 1
+                a.push(b)
+            }
+            else {
+                let spann = document.getElementById("siva")
+                spann.style.display = "block"
+                spann.style.width = "400px"
+                event.target[2].style.border = "2px solid red"
+                b = "bimbisara"
+                a.push(b)
+            }
+            var sg = event.target[4].value
+            var gend=event.target[4].value
+
+            if ((sg == "male" || sg == "Male") || (sg == "female" || sg == "Female")) {
+                let spann = document.getElementById("ram")
+                spann.style.display = "none"
+                event.target[4].style.border = "2px solid black"
+                b = 1
+                a.push(b)
+            }
+            else {
+                let spann = document.getElementById("ram")
+                spann.style.display = "block"
+                spann.style.width = "400px"
+                event.target[4].style.border = "2px solid red"
+                b = "bimbisara"
+                a.push(b)
+            }
+            var gm = event.target[5].value
+            var gem=event.target[5].value
+
+            if ((gm.match("@gmail.com"))) {
+                let spann = document.getElementById("gu")
+                spann.style.display = "none"
+                event.target[5].style.yborder = "2px solid black"
+                b = 1
+                a.push(b)
+            }
+            else {
+                let spann = document.getElementById("gu")
+                spann.style.display = "block"
+                spann.style.width = "400px"
+                event.target[5].style.border = "2px solid red"
+                b = "bimbisara"
+                a.push(b)
+            }
+            var db = event.target[6].value9
+            var dob=event.target[6].value
+            console.log()
+            if (true) {
+                let spann = document.getElementById("db")
+                spann.style.display = "none"
+                event.target[5].style.border = "2px solid black"
+                b = 1
+                a.push(b)
+            }
+            else {
+                let spann = document.getElementById("db")
+                spann.style.display = "block"
+                spann.style.width = "400px"
+                event.target[6].style.border = "2px solid red"
+                b = "bimbisara"
+                a.push(b)
+            }
+            console.log(a)
+
+            var count=0
+            for(x=0;x<=a.length;x++){
+                if(a[x]==1){
+                    count++
+                }
+            }
+            console.log(count)
+
+
+            if(count==5){
+                window.open("loginpage.html","_self")
+            }
+            else{
+                alert("please correct the details")
+            }
+
+
+
+            
+            let obj={
+                username:cnusername,
+                cnun:cnusername,
+                psd:psd,
+                cnpsd:cnpsd,
+                gender:gend,
+                gemail:gem,
+                dob:dob
+            }
+            console.log(obj)
+            arr.push(obj)
+            console.log(arr)
+            console.log(arr)
+
+            sivaaram = localStorage.setItem("lgdetails", JSON.stringify(arr))
+
+        })
+    </script>
+</body>
+
+</html>
